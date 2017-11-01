@@ -10,14 +10,17 @@ use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['only' => ['adiciona','remove']]);
+    }
+
     public function lista()
     {
-
         $produtos = Produto::all();
         if (view()->exists('produto.listagem')) {
             return view('produto.listagem')->with('produtos', $produtos);
         }
-
     }
 
     public function mostra($id)

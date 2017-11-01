@@ -29,6 +29,8 @@ Route::get('/produtos/novo', 'ProdutoController@novo');
 Route::post('/produtos/adiciona','ProdutoController@adiciona');
 Route::post('/produtos/edita', 'ProdutoController@edita');
 
+Route::get('/login2','LoginController@login');
+
 Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id', '[0-9]+');
 Route::get('/produtos/remove/{id}','ProdutoController@remove')->where('id','[0-9]+');
 Route::get('/produtos/altera/{id}','ProdutoController@altera')->where('id','[0-9]+');
